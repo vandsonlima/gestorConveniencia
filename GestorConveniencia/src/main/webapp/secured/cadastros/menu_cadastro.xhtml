@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h1 class="page-header">
+				Cadastros <small>Cadastros do sistema</small>
+			</h1>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-info-circle"></i> Gerenciamento de Cadastros
+						Básicos do Sistema
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="col-lg-6">
+						<ul>
+							<label>Usuários</label>
+							<li><a href="#">Cadastrar </a></li>
+							<li><a href="#">Consultar/Alterar/Remover</a></li>
+						</ul>
+						<ul>
+							<label>Categoria de Produtos</label>
+							<li><h:commandLink
+									action="#{categoriaProdutoController.initCadastro}"
+									value="Cadastrar" /></li>
+							<li><h:commandLink
+									action="#{categoriaProdutoController.initListar}"
+									value="Listar/Alterar/Remover" /></li>
+						</ul>
+						<ul>
+							<label>Marca</label>
+							<li><h:commandLink
+									action="#{marcaController.initCadastro}"
+									value="Cadastrar" /></li>
+							<li><h:commandLink
+									action="#{marcaController.initListar}"
+									value="Listar/Alterar/Remover" /></li>
+						</ul>
+					</div>
+					<div class="col-lg-6">
+						<ul>
+							<label>Tipo de Despesa</label>
+							<li><h:commandLink
+									action="#{tipoDespesaController.initCadastro}"
+									value="Cadastrar" /></li>
+							<li><h:commandLink
+									action="#{tipoDespesaController.initListar}"
+									value="Listar/Alterar/Remover" /></li>
+						</ul>
+						<ul>
+							<label>Tipo de Receita</label>
+							<li><h:commandLink
+									action="#{tipoReceitaController.initCadastro}"
+									value="Cadastrar" /></li>
+							<li><h:commandLink
+									action="#{tipoReceitaController.initListar}"
+									value="Listar/Alterar/Remover" /></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>
+

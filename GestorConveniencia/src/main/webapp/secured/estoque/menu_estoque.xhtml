@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h1 class="page-header">
+				Estoque <small>Gerenciamento de Estoque</small>
+			</h1>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Estoque de Produtos</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="col-lg-6">
+						<ul>
+							<label>Estoque</label>
+							<li><a href="#">Inserir Produto</a></li>
+							<li><a href="#">Alterar Estoque de um Produto</a></li>
+							<li><a href="#">Ajustar Preço de Produto</a></li>
+							<li><a href="#">Registrar Balanço de Estoque</a></li>
+						</ul>
+						<ul>
+							<label>Consultas</label>
+							<li><a href="#">Consultar Estoque</a></li>
+							<li><a href="#">Consultar Histórico de Preços</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-6">
+						<ul class="align-left">
+							<label>Produtos</label>
+							<li><h:commandLink
+									action="#{produtoController.initCadastro}" value="Cadastrar" /></li>
+							<li><h:commandLink action="#{produtoController.initListar}"
+									value="Listar/Alterar/Remover" /></li>
+						</ul>
+						<ul class="align-left">
+							<label>Relatórios</label>
+							<li><a href="#">teste</a></li>
+							<li><a href="#">teste</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>
+

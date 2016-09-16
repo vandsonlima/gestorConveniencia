@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="content">
+		<h1 class="page-header">Categoria de Produtos</h1>
+		<div class="row">
+			<div class="col-lg-12">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-fw fa-desktop"></i> <a
+						href="menu_cadastro.jsf">Cadastros</a></li>
+					<li class="active"><i class="fa fa-edit"></i> Marcas</li>
+					<li class="active">Listar/Alterar/Remover</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">Selecione um dos campos para busca
+					</div>
+					<div class="panel-body">
+						<h:form id="form_busca_marca">
+							<div class="form-group">
+								<label>Denominação</label>
+								<h:inputText id="denominacao" styleClass="form-control"
+									value="#{marcaController.obj.denominacao}" />
+							</div>
+
+							<div class="col-lg-2">
+								<h:commandButton styleClass="class= btn btn-primary "
+									action="#{marcaController.buscar}" value="Buscar" />
+							</div>
+							<div class="col-lg-2">
+								<h:commandButton styleClass="class= btn btn-default "
+									action="#{marcaController.menuUrl}" value="Cancelar"
+									immediate="true" />
+							</div>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h:form>
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>Denominação</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<ui:repeat var="item" value="#{marcaController.listaCompleta}">
+									<tr>
+										<td><h:outputText value="#{item.denominacao}" /></td>
+										<td width="30%">
+											<div class="col-lg-3">
+												<h:commandLink action="#{marcaController.selecionar(item)}"
+													alt="Editar" styleClass="class= btn btn-sm btn-success ">
+													<i class="fa fa-pencil-square-o"></i>
+												</h:commandLink>
+											</div>
+											<div class="col-lg-3">
+												<h:commandLink action="#{produtoController.inativar(item)}"
+													alt="Excluir" styleClass="class= btn btn-sm btn-danger ">
+													<i class="fa fa-trash-o"></i>
+												</h:commandLink>
+											</div>
+										</td>
+
+									</tr>
+								</ui:repeat>
+							</tbody>
+						</table>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

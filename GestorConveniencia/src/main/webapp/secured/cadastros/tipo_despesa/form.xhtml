@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="content">
+		<h1 class="page-header">Tipo de Despesa</h1>
+		<div class="row">
+			<div class="col-lg-12">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-fw fa-desktop"></i> <a
+						href="menu_cadastro.jsf">Cadastros</a></li>
+					<li class="active"><i class="fa fa-edit"></i> Tipo de Despesa</li>
+					<li class="active"> Cadastrar </li>
+				</ol>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<h:form id="form_tipo_despesa">
+					<h:inputHidden value="#{tipoDespesaController.obj.id}" />
+					<div class="form-group">
+						<label>Denominação</label>
+						<h:inputText id="denominacao" styleClass="form-control"
+							value="#{tipoDespesaController.obj.denominacao}" />
+					</div>
+
+					<div class="col-lg-2">
+						<h:commandButton styleClass="class= btn btn-primary "
+							action="#{tipoDespesaController.salvar}" value="Salvar" />
+					</div>
+					<div class="col-lg-2">
+						<h:commandButton styleClass="class= btn btn-default "
+							action="#{tipoDespesaController.menuUrl}" value="Cancelar"
+							immediate="true" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

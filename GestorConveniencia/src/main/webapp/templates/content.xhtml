@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition>
+	<div id="page-wrapper" style="height: 600px">
+		<div class="container-fluid">
+			<h:messages infoClass="alert alert-success"
+				errorClass="alert alert-danger" fatalClass="alert alert-danger"
+				warnClass="alert alert-warning" />
+			<ui:insert name="content" />
+		</div>
+	</div>
+</ui:composition>
+</html>
+

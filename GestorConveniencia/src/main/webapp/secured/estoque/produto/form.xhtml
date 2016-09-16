@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="content">
+		<h1 class="page-header">Produto</h1>
+		<div class="row">
+			<div class="col-lg-12">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-fw fa-desktop"></i> <a
+						href="menu_cadastro.jsf">Estoque</a></li>
+					<li class="active"><i class="fa fa-edit"></i> Produto</li>
+					<li class="active"> Cadastrar </li>
+				</ol>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<h:form id="form_marca">
+					<h:inputHidden value="#{produtoController.obj.id}" />
+					<div class="form-group">
+						<label>Denominação</label>
+						<h:inputText id="denominacao" styleClass="form-control"
+							value="#{produtoController.obj.denominacao}" />
+					</div>
+					<div class="form-group">
+						<label>Descrição </label>
+						<h:inputTextarea styleClass="form-control"
+							value="#{produtoController.obj.descricao}" rows="5"
+							cols="30" counter="display" maxlength="250" />
+					</div>
+					<div class="form-group">
+						<label>Preço </label>
+						<h:inputText styleClass="form-control"  
+							value="#{produtoController.obj.preco}">
+							<f:convertNumber pattern="#,##0.00"/>
+						</h:inputText>
+					</div>
+					
+					<div class="form-group">
+						<label>Categoria do Produto </label>
+						<h:selectOneMenu styleClass="form-control"
+							id="categoria" value="#{produtoController.obj.categoriaProduto.id}">
+						            <f:selectItem itemLabel="--SELECIONE UMA CATEGORIA--"/>
+						            <f:selectItems value="#{categoriaController.listaCompleta}"
+						                    var="categoria"
+						                    itemLabel="#{categoria.denominacao}"
+						                    itemValue="#{categoria.id}"/>
+						</h:selectOneMenu>	
+					</div>
+					
+					<div class="form-group">
+						<label>Marca </label>
+						<h:selectOneMenu styleClass="form-control"
+							id="marca" value="#{produtoController.obj.marcaProduto.id}">
+						            <f:selectItem itemLabel="--SELECIONE UMA CATEGORIA--"/>
+						            <f:selectItems value="#{marcaController.listaCompleta}"
+						                    var="marca"
+						                    itemLabel="#{marca.denominacao}"
+						                    itemValue="#{marca.id}"/>
+						</h:selectOneMenu>	
+					</div>
+					
+					<div class="col-lg-2">
+						<h:commandButton styleClass="class= btn btn-primary "
+							action="#{produtoController.salvar}" value="Salvar" />
+					</div>
+					<div class="col-lg-2">
+						<h:commandButton styleClass="class= btn btn-default "
+							action="#{produtoController.menuUrl}" value="Cancelar"
+							immediate="true" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

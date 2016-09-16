@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition>
+	<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<ul class="nav navbar-nav side-nav">
+			<li class="active"><h:commandLink action="/secured/index.xhtml?faces-redirect=true"><i class="fa fa-fw fa-dashboard"></i> Painel Administrativo </h:commandLink></li>
+			<li><h:commandLink action="/secured/estoque/menu_estoque.xhtml?faces-redirect=true"><i class="fa fa-fw fa-table"></i> Estoque</h:commandLink></li>
+			<li><h:commandLink action="/secured/vendas/menu_vendas.xhtml?faces-redirect=true"> Vendas</h:commandLink></li>
+			<li><h:commandLink action="/secured/financeiro/menu_financeiro.xhtml?faces-redirect=true"> Financeiro</h:commandLink></li>
+			<li><h:commandLink action="/secured/cadastros/menu_cadastro.xhtml?faces-redirect=true">
+				<i class="fa fa-fw fa-desktop"></i> Cadastros</h:commandLink>
+			</li>
+			
+		</ul>
+	</div>
+</ui:composition>
+</html>
